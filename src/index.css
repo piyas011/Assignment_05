@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+.active {
+  color: #db2777;
+  transition: 0.3s;
+}
