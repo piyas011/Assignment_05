@@ -19,7 +19,7 @@ const Header = () => {
     setNavButton(navType);
   };
   return (
-    <header className=" h-20 px-2 ">
+    <header className=" h-20 px-2 fixed bg-white left-0 right-0 top-0 ">
       <div className=" flex container mx-auto justify-between items-center h-full ">
         {/*--------------------- Logo Images ----------------------------------*/}
         <a href="#">
