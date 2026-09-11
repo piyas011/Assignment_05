@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Logo from "../logo-text.png";
+import { FaBarsStaggered } from "react-icons/fa6";
 
 type registerButtonType = "signIn" | "signUp";
 type navButtonType = "home" | "technologies" | "project" | "about" | "contact";
@@ -18,16 +19,16 @@ const Header = () => {
     setNavButton(navType);
   };
   return (
-    <header className=" h-20">
-      <div className=" flex container mx-auto justify-between items-center h-full">
+    <header className=" h-20 px-2 ">
+      <div className=" flex container mx-auto justify-between items-center h-full ">
         {/*--------------------- Logo Images ----------------------------------*/}
         <a href="#">
-          <img src={Logo} alt="DevStack" />
+          <img src={Logo} alt="DevStack" className="w-30 sm:w-auto" />
         </a>
 
         {/*--------------------- Nav Items ----------------------------------*/}
         <nav className=" transition-normal">
-          <ul className="flex gap-10 text-[#475569] text-[16px]">
+          <ul className=" hidden md:flex gap-2 md:gap-5  lg:gap-10 text-[#475569] text-[16px]">
             <li className={` ${navButton === "home" ? "active" : ""}`}>
               <a href="#" onClick={() => handelNavClickButton("home")}>
                 Home
@@ -57,20 +58,27 @@ const Header = () => {
         </nav>
 
         {/*--------------------- Buttons ----------------------------------*/}
-        <div className="flex justify-center items-center">
+        <div className="hidden sm:flex justify-center items-center">
           <button
             onClick={() => handelClickRegisterButton("signIn")}
-            className={` px-4 py-2 cursor-pointer rounded-3xl ${registerButton === "signIn" ? "bg-[#DE2A8A] text-white " : "hover:bg-transparent"}`}
+            className={` text-[14px] md:text-[16px]  px-2 md: lg:px-4 py-1 md:py-2  cursor-pointer rounded-3xl ${registerButton === "signIn" ? "bg-[#DE2A8A] text-white " : "hover:bg-transparent"}`}
             type="button"
           >
             Sign In
           </button>
           <button
             onClick={() => handelClickRegisterButton("signUp")}
-            className={`px-4 py-2 cursor-pointer rounded-3xl  ${registerButton === "signUp" ? " bg-[#DE2A8A] text-white" : "hover:bg-transparent "} `}
+            className={` text-[14px] md:text-[16px]   px-2 md: lg:px-4 py-1 md:py-2 cursor-pointer rounded-3xl  ${registerButton === "signUp" ? " bg-[#DE2A8A] text-white" : "hover:bg-transparent "} `}
             type="button"
           >
             Sign Up
+          </button>
+        </div>
+
+        <div className="flex sm:hidden mr-5 text-3xl ">
+          <button className="outline-none">
+            {" "}
+            <FaBarsStaggered />
           </button>
         </div>
       </div>
