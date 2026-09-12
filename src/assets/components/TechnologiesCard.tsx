@@ -1,12 +1,34 @@
 import { IoMdStarOutline } from "react-icons/io";
 import type { ITechnologiesType } from "./types/type";
+import { useState, type Dispatch, type SetStateAction } from "react";
 
 interface TechnologiesCardProps {
   technology: ITechnologiesType;
+  count: number;
+  setCount: Dispatch<SetStateAction<number>>;
+  selectedTechnology: ITechnologiesType[];
+  setSelectedTechnology: Dispatch<SetStateAction<ITechnologiesType[]>>;
 }
-const TechnologiesCard = ({ technology }: TechnologiesCardProps) => {
+const TechnologiesCard = ({
+  technology,
+  count,
+  setCount,
+  selectedTechnology,
+  setSelectedTechnology,
+}: TechnologiesCardProps) => {
+  // Add To Stack Button Click
+  const [addStack, setAddStack] = useState(false);
+
+  const handleAddToStack = (click: boolean) => {
+    setCount(count + 1);
+    setAddStack(click);
+    setSelectedTechnology([...selectedTechnology, technology]);
+  };
+
   return (
-    <div>
+    <div
+      className={`border border-gray-300 ${addStack === true ? "border-red-300 border-3 " : ""} m-2 rounded-3xl p-5`}
+    >
       <div className="flex justify-between items-center">
         <div>
           <img
@@ -35,8 +57,14 @@ const TechnologiesCard = ({ technology }: TechnologiesCardProps) => {
           {technology.rating}
         </p>
       </div>
-
-      <button className="w-full mt-4 bg-[#0A0F1D] p-2.5 text-white rounded-2xl cursor-pointer hover:scale-105 transition duration-300">
+      <button
+        className="w-full mt-4 bg-[#0A0F1D] p-2.5 text-white rounded-2xl cursor-pointer
+             hover:scale-105 transition duration-300
+             disabled:bg-gray-400 disabled:text-gray-200 disabled:cursor-not-allowed
+             disabled:hover:scale-100"
+        onClick={() => handleAddToStack(true)}
+        disabled={addStack}
+      >
         Add to Stack
       </button>
     </div>

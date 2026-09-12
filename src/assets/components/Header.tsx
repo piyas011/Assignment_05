@@ -19,7 +19,7 @@ const Header = () => {
     setNavButton(navType);
   };
   return (
-    <header className=" h-20 px-2 fixed bg-white left-0 right-0 top-0 ">
+    <header className=" h-20 z-100 px-2 fixed bg-white left-0 right-0 top-0 ">
       <div className=" flex container mx-auto justify-between items-center h-full ">
         {/*--------------------- Logo Images ----------------------------------*/}
         <a href="#">
@@ -76,7 +76,7 @@ const Header = () => {
         </div>
 
         <div className="flex sm:hidden mr-5 text-3xl ">
-          <button className="outline-none">
+          <button className="outline-none cursor-pointer">
             {" "}
             <FaBarsStaggered />
           </button>
