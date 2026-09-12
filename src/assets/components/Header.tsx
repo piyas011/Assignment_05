@@ -61,7 +61,7 @@ const Header = () => {
         <div className="hidden sm:flex justify-center items-center">
           <button
             onClick={() => handelClickRegisterButton("signIn")}
-            className={` text-[14px] md:text-[16px]  px-2 md: lg:px-4 py-1 md:py-2  cursor-pointer rounded-3xl ${registerButton === "signIn" ? "bg-[#DE2A8A] text-white " : "hover:bg-transparent"}`}
+            className={` text-[14px] md:text-[16px]   px-2 md: lg:px-4 py-1 md:py-2 cursor-pointer rounded-3xl  ${registerButton === "signIn" ? " bg-[#DE2A8A] text-white" : "hover:bg-transparent "} `}
             type="button"
           >
             Sign In

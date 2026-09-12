@@ -11,15 +11,15 @@ const HeroSection = () => {
             Development Stack
           </span>
         </h1>
-        <p className="text-center sm:text-left my-10">
+        <p className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[#475569] mt-5 mb-5 text-center sm:text-center md:text-left">
           Explore frontend, backend, database, and tooling options, compare them
           side by side, and put together the stack that fits your next project.
         </p>
-        <div className="w-full lg:w-5/7 flex gap-4 justify-center">
-          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-1/3 sm:w-1/2 bg-linear-to-r from-[#F97316] to-[#EC4899]  text-white ">
+        <div className="flex justify-center sm:justify-start gap-3 flex-nowrap ">
+          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-1/3 sm:w-1/2 border border-[#F97316] text-[#F97316] hover:bg-linear-to-r from-[#F97316] to-[#EC4899] hover:text-white transition duration-300">
             Explore Technologies
           </button>
-          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-1/3 sm:w-1/2">
+          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-1/3 sm:w-1/2 border border-[#F97316] text-[#F97316] hover:bg-linear-to-r from-[#F97316] to-[#EC4899] hover:text-white transition duration-300">
             Learn More
           </button>
         </div>
