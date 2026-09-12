@@ -2,6 +2,7 @@ import { IoMdStarOutline } from "react-icons/io";
 import type { ITechnologiesType } from "./types/type";
 import { type Dispatch, type SetStateAction } from "react";
 import { toast } from "react-toastify";
+import { FaCheck } from "react-icons/fa6";
 
 interface TechnologiesCardProps {
   technology: ITechnologiesType;
@@ -31,7 +32,7 @@ const TechnologiesCard = ({
 
   return (
     <div
-      className={`border m-2 rounded-[10px] p-5 shadow-md hover:shadow-lg transition duration-300 ${selectedTechnology.some((tech) => tech.id === technology.id) ? "border-blue-600" : ""}  `}
+      className={`border border-gray-200 m-2 rounded-[10px] p-5 shadow-md hover:shadow-lg transition duration-300 ${selectedTechnology.some((tech) => tech.id === technology.id) ? "border-red-200 border-3" : ""}  `}
     >
       <div className="flex justify-between items-center">
         <div>
@@ -62,13 +63,18 @@ const TechnologiesCard = ({
         </p>
       </div>
       <button
-        className="w-full border bg-[#0A0F1D] border-red-300 py-1 rounded-lg mt-8 text-white font-bold cursor-pointer btn disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-red-200 disabled:text-black   "
+        className="w-full border bg-[#0A0F1D] border-red-300 py-1 rounded-lg mt-8 text-white font-bold cursor-pointer btn disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-red-200 disabled:text-red-600   "
         onClick={() => handleAddToStack(true)}
         disabled={selectedTechnology.some((tech) => tech.id === technology.id)}
       >
-        {selectedTechnology.some((tech) => tech.id === technology.id)
-          ? "Added to Stack"
-          : "Add to Stack"}
+        {selectedTechnology.some((tech) => tech.id === technology.id) ? (
+          <span className="flex items-center justify-center gap-2">
+            <FaCheck />
+            Added to Stack
+          </span>
+        ) : (
+          "Add to Stack"
+        )}
       </button>
     </div>
   );

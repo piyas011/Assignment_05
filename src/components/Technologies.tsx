@@ -1,6 +1,6 @@
 import { Suspense, useState } from "react";
 
-import TechnologiesCard from "./TechnologiesCardLayout";
+// import TechnologiesCard from "./TechnologiesCardLayout";
 import type { ITechnologiesType } from "./types/type";
 import TechnologiesCardLayout from "./TechnologiesCardLayout";
 import SelectedStack from "./SelectedStack";
@@ -47,7 +47,7 @@ const Technologies = () => {
               setAddStack={setAddStack}
             />
           </Suspense>
-          <Suspense fallback={<h1>Loading....</h1>}>
+          {/* <Suspense fallback={<h1>Loading....</h1>}>
             <TechnologiesCard
               selectedTechnology={selectedTechnology}
               setSelectedTechnology={setSelectedTechnology}
@@ -57,7 +57,7 @@ const Technologies = () => {
               addStack={addStack}
               setAddStack={setAddStack}
             />
-          </Suspense>
+          </Suspense> */}
         </div>
 
         {/* Your Stack section  */}
