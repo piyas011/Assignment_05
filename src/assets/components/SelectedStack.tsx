@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { ITechnologiesType } from "./types/type";
 import { RxCross2 } from "react-icons/rx";
-import { toast } from "react-toastify/unstyled";
+import { toast } from "react-toastify";
 
 interface SelectedStackProps {
   selectedTechnology: ITechnologiesType[];
@@ -30,6 +30,7 @@ const SelectedStack = ({
     );
     setSelectedTechnology(updatedStack);
     setCount(count - 1);
+    toast.info(`${technology.name} Removed from Stack`);
   };
 
   return (

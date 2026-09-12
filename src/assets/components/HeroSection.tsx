@@ -16,10 +16,10 @@ const HeroSection = () => {
           side by side, and put together the stack that fits your next project.
         </p>
         <div className="w-full lg:w-5/7 flex gap-4 justify-center">
-          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] w-1/3 sm:w-1/2 bg-linear-to-r from-[#F97316] to-[#EC4899]  text-white ">
+          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-1/3 sm:w-1/2 bg-linear-to-r from-[#F97316] to-[#EC4899]  text-white ">
             Explore Technologies
           </button>
-          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] w-1/3 sm:w-1/2">
+          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-1/3 sm:w-1/2">
             Learn More
           </button>
         </div>

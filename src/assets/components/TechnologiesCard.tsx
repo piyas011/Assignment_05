@@ -31,9 +31,7 @@ const TechnologiesCard = ({
 
   return (
     <div
-      className={`border m-2 border-gray-300 rounded-[10px] p-5 shadow-md hover:shadow-lg transition duration-300 ${
-        selectedTechnology.some((tech) => tech.id === technology.id) ? "" : ""
-      }`}
+      className={`border m-2 rounded-[10px] p-5 shadow-md hover:shadow-lg transition duration-300 ${selectedTechnology.some((tech) => tech.id === technology.id) ? "border-blue-600" : ""}  `}
     >
       <div className="flex justify-between items-center">
         <div>
@@ -53,7 +51,7 @@ const TechnologiesCard = ({
       {/* technology Name */}
       <h3 className="my-4 text-3xl font-bold">{technology.name}</h3>
       <p className="text-[#64748B] my-5">{technology.description}</p>
-      <div className="flex justify-between items-center text-[#64748B]">
+      <div className="flex justify-between items-center text-[#0F172A]">
         <p>{technology.category}</p>
         <p>{technology.difficulty}</p>
         <p className="flex  justify-center items-center">
@@ -64,7 +62,7 @@ const TechnologiesCard = ({
         </p>
       </div>
       <button
-        className="w-full border bg-[#0A0F1D] border-red-300 py-1 rounded-lg mt-8 text-white font-bold cursor-pointer btn disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-red-200 disabled:text-black "
+        className="w-full border bg-[#0A0F1D] border-red-300 py-1 rounded-lg mt-8 text-white font-bold cursor-pointer btn disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-red-200 disabled:text-black   "
         onClick={() => handleAddToStack(true)}
         disabled={selectedTechnology.some((tech) => tech.id === technology.id)}
       >

@@ -61,7 +61,7 @@ const Technologies = () => {
         </div>
 
         {/* Your Stack section  */}
-        <div className=" w-full sm:col-span-6 md:col-span-4 lg:col-span-4 ">
+        <div className=" col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4">
           <div className="p-5 border border-gray-300  rounded-2xl">
             <h1 className="text-[18px] font-bold text-[#0F172A]">Your Stack</h1>
             <p className="text-[14px] text-[#475569] mb-3">
@@ -76,7 +76,13 @@ const Technologies = () => {
               setCount={setCount}
             />
             {selectedTechnology.length > 0 ? (
-              <button className="w-full border border-red-300 py-1 rounded-lg mt-8 text-red-600 font-bold cursor-pointer btn ">
+              <button
+                className="w-full border border-red-300 py-1 rounded-lg mt-8 text-red-600 font-bold cursor-pointer btn "
+                onClick={() => {
+                  setSelectedTechnology([]);
+                  setCount(0);
+                }}
+              >
                 {" "}
                 Remove All
               </button>
