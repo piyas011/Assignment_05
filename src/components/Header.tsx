@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../logo-text.png";
+import Logo from "../assets/logo-text.png";
 import { FaBarsStaggered } from "react-icons/fa6";
 
 type registerButtonType = "signIn" | "signUp";

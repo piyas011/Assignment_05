@@ -51,7 +51,7 @@ const TechnologiesCard = ({
       {/* technology Name */}
       <h3 className="my-4 text-3xl font-bold">{technology.name}</h3>
       <p className="text-[#64748B] my-5">{technology.description}</p>
-      <div className="flex justify-between items-center text-[#0F172A]">
+      <div className="flex justify-between items-center text-[#475569] text-sm">
         <p>{technology.category}</p>
         <p>{technology.difficulty}</p>
         <p className="flex  justify-center items-center">
