@@ -1,6 +1,7 @@
 import { IoMdStarOutline } from "react-icons/io";
 import type { ITechnologiesType } from "./types/type";
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
+import { toast } from "react-toastify";
 
 interface TechnologiesCardProps {
   technology: ITechnologiesType;
@@ -8,6 +9,8 @@ interface TechnologiesCardProps {
   setCount: Dispatch<SetStateAction<number>>;
   selectedTechnology: ITechnologiesType[];
   setSelectedTechnology: Dispatch<SetStateAction<ITechnologiesType[]>>;
+  addStack: boolean;
+  setAddStack: Dispatch<SetStateAction<boolean>>;
 }
 const TechnologiesCard = ({
   technology,
@@ -15,19 +18,22 @@ const TechnologiesCard = ({
   setCount,
   selectedTechnology,
   setSelectedTechnology,
+  setAddStack,
 }: TechnologiesCardProps) => {
   // Add To Stack Button Click
-  const [addStack, setAddStack] = useState(false);
 
   const handleAddToStack = (click: boolean) => {
     setCount(count + 1);
     setAddStack(click);
     setSelectedTechnology([...selectedTechnology, technology]);
+    toast.success(`${technology.name} Added to Stack`);
   };
 
   return (
     <div
-      className={`border border-gray-300 ${addStack === true ? "border-red-300 border-3 " : ""} m-2 rounded-3xl p-5`}
+      className={`border m-2 border-gray-300 rounded-[10px] p-5 shadow-md hover:shadow-lg transition duration-300 ${
+        selectedTechnology.some((tech) => tech.id === technology.id) ? "" : ""
+      }`}
     >
       <div className="flex justify-between items-center">
         <div>
@@ -39,7 +45,7 @@ const TechnologiesCard = ({
         </div>
         <small
           style={{ color: technology.color }}
-          className={` py-0.5  px-3 border text-[${technology.color}] rounded-3xl bg-gray-50 border-gray-300`}
+          className={` py-0.5  px-3 border  rounded-3xl bg-gray-50 border-gray-300`}
         >
           {technology.badge}
         </small>
@@ -58,14 +64,13 @@ const TechnologiesCard = ({
         </p>
       </div>
       <button
-        className="w-full mt-4 bg-[#0A0F1D] p-2.5 text-white rounded-2xl cursor-pointer
-             hover:scale-105 transition duration-300
-             disabled:bg-gray-400 disabled:text-gray-200 disabled:cursor-not-allowed
-             disabled:hover:scale-100"
+        className="w-full border bg-[#0A0F1D] border-red-300 py-1 rounded-lg mt-8 text-white font-bold cursor-pointer btn disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-red-200 disabled:text-black "
         onClick={() => handleAddToStack(true)}
-        disabled={addStack}
+        disabled={selectedTechnology.some((tech) => tech.id === technology.id)}
       >
-        Add to Stack
+        {selectedTechnology.some((tech) => tech.id === technology.id)
+          ? "Added to Stack"
+          : "Add to Stack"}
       </button>
     </div>
   );

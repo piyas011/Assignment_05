@@ -1,13 +1,9 @@
 import { Suspense, useState } from "react";
-import type { ReactNode } from "react";
+
 import TechnologiesCard from "./TechnologiesCardLayout";
 import type { ITechnologiesType } from "./types/type";
 import TechnologiesCardLayout from "./TechnologiesCardLayout";
 import SelectedStack from "./SelectedStack";
-
-const SelectedStackComponent = SelectedStack as unknown as (
-  props: Parameters<typeof SelectedStack>[0],
-) => ReactNode;
 
 const technologiesFetch = async (): Promise<ITechnologiesType[]> => {
   const res = await fetch("/public/Techmologies.json");
@@ -21,8 +17,8 @@ const Technologies = () => {
   const [selectedTechnology, setSelectedTechnology] = useState<
     ITechnologiesType[]
   >([]);
-
   const [count, setCount] = useState(0);
+  const [addStack, setAddStack] = useState(false);
 
   return (
     <section className="">
@@ -47,6 +43,8 @@ const Technologies = () => {
               technologiesFetchPromise={technologiesFetchPromise}
               count={count}
               setCount={setCount}
+              addStack={addStack}
+              setAddStack={setAddStack}
             />
           </Suspense>
           <Suspense fallback={<h1>Loading....</h1>}>
@@ -56,6 +54,8 @@ const Technologies = () => {
               technologiesFetchPromise={technologiesFetchPromise}
               count={count}
               setCount={setCount}
+              addStack={addStack}
+              setAddStack={setAddStack}
             />
           </Suspense>
         </div>
@@ -69,9 +69,11 @@ const Technologies = () => {
               {count === 0 ? "yet." : ""}
             </p>
 
-            <SelectedStackComponent
+            <SelectedStack
               selectedTechnology={selectedTechnology}
               setSelectedTechnology={setSelectedTechnology}
+              count={count}
+              setCount={setCount}
             />
             {selectedTechnology.length > 0 ? (
               <button className="w-full border border-red-300 py-1 rounded-lg mt-8 text-red-600 font-bold cursor-pointer btn ">

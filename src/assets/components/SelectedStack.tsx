@@ -1,14 +1,21 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { ITechnologiesType } from "./types/type";
 import { RxCross2 } from "react-icons/rx";
-import Technologies from "./Technologies";
+import { toast } from "react-toastify/unstyled";
 
 interface SelectedStackProps {
   selectedTechnology: ITechnologiesType[];
   setSelectedTechnology: Dispatch<SetStateAction<ITechnologiesType[]>>;
+  count: number;
+  setCount: Dispatch<SetStateAction<number>>;
 }
 
-const SelectedStack = ({ selectedTechnology }: SelectedStackProps) => {
+const SelectedStack = ({
+  selectedTechnology,
+  setSelectedTechnology,
+  count,
+  setCount,
+}: SelectedStackProps) => {
   //   console.log(selectedTechnology);
   if (selectedTechnology.length === 0)
     return (
@@ -16,6 +23,15 @@ const SelectedStack = ({ selectedTechnology }: SelectedStackProps) => {
         <p>Your Stack is Empty</p>
       </div>
     );
+
+  const handleRemoveFromStack = (technology: ITechnologiesType) => {
+    const updatedStack = selectedTechnology.filter(
+      (tech) => tech.id !== technology.id,
+    );
+    setSelectedTechnology(updatedStack);
+    setCount(count - 1);
+  };
+
   return (
     <div>
       {selectedTechnology.map((technology) => {
@@ -32,7 +48,10 @@ const SelectedStack = ({ selectedTechnology }: SelectedStackProps) => {
                 <small>{technology.category}</small>
               </div>
             </div>
-            <button className="cursor-pointer">
+            <button
+              className="cursor-pointer text-red-600 text-2xl hover:scale-110 transition duration-300"
+              onClick={() => handleRemoveFromStack(technology)}
+            >
               <RxCross2 />
             </button>
           </div>

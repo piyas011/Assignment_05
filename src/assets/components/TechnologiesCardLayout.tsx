@@ -8,6 +8,8 @@ interface TechnologiesCardLayoutProps {
   setSelectedTechnology: Dispatch<SetStateAction<ITechnologiesType[]>>;
   count: number;
   setCount: Dispatch<SetStateAction<number>>;
+  addStack: boolean;
+  setAddStack: Dispatch<SetStateAction<boolean>>;
 }
 
 const TechnologiesCardLayout = ({
@@ -16,6 +18,8 @@ const TechnologiesCardLayout = ({
   setCount,
   selectedTechnology,
   setSelectedTechnology,
+  addStack,
+  setAddStack,
 }: TechnologiesCardLayoutProps) => {
   const technologies = use(technologiesFetchPromise);
 
@@ -30,6 +34,8 @@ const TechnologiesCardLayout = ({
               setCount={setCount}
               selectedTechnology={selectedTechnology}
               setSelectedTechnology={setSelectedTechnology}
+              addStack={addStack}
+              setAddStack={setAddStack}
             />
           </div>
         ))}
