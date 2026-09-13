@@ -54,8 +54,22 @@ The selected technologies are displayed separately in the **Your Stack** section
 
 ---
 
+### 3.  Manage Your Stack
 
+Users can manage their selected technologies easily.
 
+They can:
+
+- Add technologies to the stack
+- Remove technologies from the stack
+- View their selected technologies
+- Clear the entire stack
+
+The UI also provides feedback when a technology has already been added.
+
+---
+
+<h1>React Questions & Answers</h1>
 
 
 
