@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import type { ITechnologiesType } from "./types/type";
 import TechnologiesCardLayout from "./TechnologiesCardLayout";
 import SelectedStack from "./SelectedStack";
+import { toast } from "react-toastify";
 
 const technologiesFetch = async (): Promise<ITechnologiesType[]> => {
   const res = await fetch("/public/Techmologies.json");
@@ -81,6 +82,7 @@ const Technologies = () => {
                 onClick={() => {
                   setSelectedTechnology([]);
                   setCount(0);
+                  toast.success("All Technologies Removed from Stack");
                 }}
               >
                 {" "}
