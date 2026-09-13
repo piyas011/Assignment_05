@@ -22,9 +22,41 @@ The project has a clean and responsive UI with interactive technology cards and 
 -  Vite
 -  JSON
 -  React Hooks
-- `useState`
--  - `useEffect`
+-   `useState`
+-   `useEffect`
 -  React Icons
 -  Responsive Design
 
 ---
+
+##  Features
+
+### 1.  Explore Technologies
+
+Users can explore different technologies from the technology cards.
+
+Each technology contains information such as:
+
+- Technology name
+- Description
+- Category
+- Difficulty level
+- Rating
+- Technology icon
+
+---
+
+### 2.  Build Your Own Stack
+
+Users can add technologies to their personal development stack by clicking the **Add to Stack** button.
+
+The selected technologies are displayed separately in the **Your Stack** section.
+
+---
+
+
+
+
+
+
+
