@@ -182,9 +182,9 @@ TypeScript with React
 Responsive UI with Tailwind CSS
 Working with JSON data
 
-#👨‍💻 Developer
+# 👨‍💻 Developer
 
-##Piyas Ahmed
+## Piyas Ahmed
 
 Built with ❤️ using React, TypeScript and Tailwind CSS.
 
