@@ -95,11 +95,7 @@ I used useState in this project to manage the selected technologies in the user'
 
 4. What does the useEffect hook do, and why did you need it to load the JSON data?
 
-The useEffect hook is used to perform side effects in a React component.
-
-I used useEffect to load the technology data from the JSON file when the application starts.
-
-This allows the application to fetch the technology data and display it dynamically instead of writing all the technology information directly inside the component.
+I did not use useEffect to load the JSON data. I used fetch() to get the data and React's use() hook to read the Promise and display the technologies dynamically.
 
 5. Why does every item in a .map() list need a unique key prop?
 
@@ -118,6 +114,78 @@ In this project, I used the technology id as the key:
 
 Using a unique id makes list rendering more efficient and avoids React warnings.
 
+6. What is conditional rendering? Show one place you used it.
 
+Conditional rendering means displaying different UI depending on a condition.
+
+I used conditional rendering in the Your Stack section.
+
+When the user has not selected any technology, an empty stack message is displayed.
+
+For example:
+
+{selectedTechnology.length === 0 ? (
+  <p>Your stack is empty. Add some technologies!</p>
+) : (
+  selectedTechnology.map((technology) => (
+    <StackCard
+      key={technology.id}
+      technology={technology}
+    />
+  ))
+)}
+
+So, if the stack is empty, the empty message is shown. Otherwise, the selected technologies are displayed.
+
+7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+A parent component can send data to a child component using props.
+
+For example:
+
+<TechnologyCard
+  technology={technology}
+  selectedTechnology={selectedTechnology}
+  setSelectedTechnology={setSelectedTechnology}
+/>
+
+Here, the parent sends the technology data and state-related information to the child.
+
+The child can send something back to the parent by calling a function received through props.
+
+For example:
+
+<button onClick={() => addStack(technology)}>
+  Add to Stack
+</button>
+
+Here, addStack is a function from the parent component. The child calls it when the user clicks the button, and the parent updates the state.
+
+
+Project Goal
+
+The main goal of this project was to practice React fundamentals by building a real-world interactive application.
+
+Through this project, I practiced:
+
+React Components
+Props
+State Management
+useState
+useEffect
+Conditional Rendering
+.map()
+Event Handling
+Parent-to-Child Data Flow
+Child-to-Parent Communication
+TypeScript with React
+Responsive UI with Tailwind CSS
+Working with JSON data
+
+#👨‍💻 Developer
+
+##Piyas Ahmed
+
+Built with ❤️ using React, TypeScript and Tailwind CSS.
 
 
