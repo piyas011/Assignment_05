@@ -67,6 +67,9 @@ They can:
 
 The UI also provides feedback when a technology has already been added.
 
+
+<h1>React Questions & Answers</h1>
+
 ####1. What is JSX, and why is it used in React?
 
 JSX stands for JavaScript XML.
@@ -74,22 +77,6 @@ JSX stands for JavaScript XML.
 It allows us to write HTML-like code inside JavaScript/TypeScript.
 
 I used JSX throughout this project to create React components and build the user interface easily.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1>React Questions & Answers</h1>
-
 
 
 
