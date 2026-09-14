@@ -7,7 +7,7 @@ import SelectedStack from "./SelectedStack";
 import { toast } from "react-toastify";
 
 const technologiesFetch = async (): Promise<ITechnologiesType[]> => {
-  const res = await fetch("/Techmologies.json");
+  const res = await fetch("/Technologies.json");
   const data = await res.json();
   return data;
 };
