@@ -15,11 +15,11 @@ const HeroSection = () => {
           Explore frontend, backend, database, and tooling options, compare them
           side by side, and put together the stack that fits your next project.
         </p>
-        <div className="flex justify-center sm:justify-start gap-3 flex-nowrap ">
-          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-1/3 sm:w-1/2 borderborder-gray-200 text-[#475569] hover:bg-linear-to-r from-[#F97316] to-[#EC4899] hover:text-white transition duration-300">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-5 lg:gap-10 mb-5">
+          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-full border border-gray-200 bg-linear-to-r from-[#F97316] to-[#EC4899] text-white transition duration-300">
             Explore Technologies
           </button>
-          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-1/3 sm:w-1/2 border border-gray-200 text-[#475569] hover:bg-linear-to-r from-[#F97316] to-[#EC4899] hover:text-white transition duration-300">
+          <button className="btn text-[10px] sm:text-[13px] md:text-[13px] lg:text-[20px] w-full border border-gray-200 text-[#475569] hover:bg-linear-to-r from-[#F97316] to-[#EC4899] hover:text-white transition duration-300">
             Learn More
           </button>
         </div>
