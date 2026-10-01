@@ -22,7 +22,7 @@ const Header = () => {
     <header className=" h-20 z-100 px-2 fixed bg-white left-0 right-0 top-0 ">
       <div className=" flex container mx-auto justify-between items-center h-full ">
         {/*--------------------- Logo Images ----------------------------------*/}
-        <a href="#">
+        <a href="https://www.profitableratecpmnetwork.com/n1ztce6i9?key=fc514b4882d8ef926e3b19e3d6a98960">
           <img src={Logo} alt="DevStack" className="w-30 sm:w-auto" />
         </a>
 
